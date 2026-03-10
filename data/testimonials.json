@@ -1,0 +1,100 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Thuỳ Đỗ",
+      "avatar": "/images/testimonial-1.png",
+      "image": "/images/testimonial-1.png",
+      "feedback": "Mỗi lần ghé The OM Lounge là một lần mình tự thưởng cho bản thân. Mình rất thích không gian ở đây, vừa sang trọng vừa ấm cúng. Bộ nail thì khỏi chê luôn,...",
+      "fullFeedback": "Mỗi lần ghé The OM Lounge là một lần mình tự thưởng cho bản thân. Mình rất thích không gian ở đây, vừa sang trọng vừa ấm cúng. Bộ nail thì khỏi chê luôn, chất lượng dịch vụ tuyệt vời và nhân viên rất chuyên nghiệp."
+    },
+    {
+      "id": 2,
+      "name": "Thuỳ Đỗ",
+      "avatar": "/images/testimonial-2.png",
+      "image": "/images/testimonial-2.png",
+      "feedback": "Mỗi lần ghé The OM Lounge là một lần mình tự thưởng cho bản thân. Mình rất thích không gian ở đây, vừa sang trọng vừa ấm cúng...",
+      "fullFeedback": "Mỗi lần ghé The OM Lounge là một lần mình tự thưởng cho bản thân. Mình rất thích không gian ở đây, vừa sang trọng vừa ấm cúng."
+    },
+    {
+      "id": 3,
+      "name": "John Doe",
+      "avatar": "/images/testimonial-3.png",
+      "image": "/images/testimonial-3.png",
+      "feedback": "Mỗi lần ghé The OM Lounge là một lần mình tự thưởng cho bản thân. Mình rất thích không gian ở đây, vừa sang trọng vừa ấm cúng...",
+      "fullFeedback": "Mỗi lần ghé The OM Lounge là một lần mình tự thưởng cho bản thân. Mình rất thích không gian ở đây, vừa sang trọng vừa ấm cúng."
+    },
+    {
+      "id": 4,
+      "name": "Jane Smith",
+      "avatar": "/images/testimonial-1.png",
+      "image": "/images/testimonial-1.png",
+      "feedback": "Dịch vụ tuyệt vời, không gian rất đẹp và thư giãn. Mình sẽ quay lại nhiều lần nữa!",
+      "fullFeedback": "Dịch vụ tuyệt vời, không gian rất đẹp và thư giãn. Mình sẽ quay lại nhiều lần nữa! Nhân viên rất nhiệt tình và chuyên nghiệp."
+    },
+    {
+      "id": 5,
+      "name": "Nguyễn Văn A",
+      "avatar": "/images/testimonial-2.png",
+      "image": "/images/testimonial-2.png",
+      "feedback": "Rất hài lòng với chất lượng dịch vụ tại The OM Lounge. Chắc chắn sẽ giới thiệu cho bạn bè!",
+      "fullFeedback": "Rất hài lòng với chất lượng dịch vụ tại The OM Lounge. Chắc chắn sẽ giới thiệu cho bạn bè! Không gian đẹp, dịch vụ tốt."
+    },
+    {
+      "id": 6,
+      "name": "Trần Thị B",
+      "avatar": "/images/testimonial-3.png",
+      "image": "/images/testimonial-3.png",
+      "feedback": "Không gian rất đẹp và thư giãn. Nhân viên phục vụ rất chuyên nghiệp và nhiệt tình. Mình rất hài lòng!",
+      "fullFeedback": "Không gian rất đẹp và thư giãn. Nhân viên phục vụ rất chuyên nghiệp và nhiệt tình. Mình rất hài lòng với dịch vụ tại đây!"
+    },
+    {
+      "id": 7,
+      "name": "Lê Văn C",
+      "avatar": "/images/testimonial-1.png",
+      "image": "/images/testimonial-1.png",
+      "feedback": "The OM Lounge là nơi tuyệt vời để thư giãn. Chất lượng dịch vụ cao và giá cả hợp lý. Sẽ quay lại!",
+      "fullFeedback": "The OM Lounge là nơi tuyệt vời để thư giãn. Chất lượng dịch vụ cao và giá cả hợp lý. Sẽ quay lại nhiều lần nữa!"
+    },
+    {
+      "id": 8,
+      "name": "Phạm Thị D",
+        "avatar": "/images/testimonial-2.png",
+      "image": "/images/testimonial-2.png",
+      "feedback": "Rất ấn tượng với không gian và dịch vụ tại The OM Lounge. Bộ nail đẹp và bền lâu. Cảm ơn team!",
+      "fullFeedback": "Rất ấn tượng với không gian và dịch vụ tại The OM Lounge. Bộ nail đẹp và bền lâu. Cảm ơn team đã phục vụ tận tình!"
+    },
+    {
+      "id": 9,
+      "name": "Hoàng Văn E",
+      "avatar": "/images/testimonial-3.png",
+      "image": "/images/testimonial-3.png",
+      "feedback": "Mình đã thử nhiều spa nhưng The OM Lounge là tốt nhất. Không gian sang trọng, dịch vụ chất lượng cao.",
+      "fullFeedback": "Mình đã thử nhiều spa nhưng The OM Lounge là tốt nhất. Không gian sang trọng, dịch vụ chất lượng cao. Rất đáng giá!"
+    },
+    {
+      "id": 10,
+      "name": "Võ Thị F",
+      "avatar": "/images/testimonial-1.png",
+      "image": "/images/testimonial-1.png",
+      "feedback": "Lần đầu đến The OM Lounge và mình rất thích. Không gian đẹp, nhân viên thân thiện. Sẽ quay lại!",
+      "fullFeedback": "Lần đầu đến The OM Lounge và mình rất thích. Không gian đẹp, nhân viên thân thiện. Sẽ quay lại nhiều lần nữa!"
+    },
+    {
+      "id": 11,
+      "name": "Đặng Văn G",
+      "avatar": "/images/testimonial-2.png",
+      "image": "/images/testimonial-2.png",
+      "feedback": "Dịch vụ tại The OM Lounge vượt quá mong đợi. Chất lượng tuyệt vời và giá cả hợp lý. Rất recommend!",
+      "fullFeedback": "Dịch vụ tại The OM Lounge vượt quá mong đợi. Chất lượng tuyệt vời và giá cả hợp lý. Rất recommend cho mọi người!"
+    },
+    {
+      "id": 12,
+      "name": "Bùi Thị H",
+      "avatar": "/images/testimonial-3.png",
+      "image": "/images/testimonial-3.png",
+      "feedback": "The OM Lounge là điểm đến lý tưởng để thư giãn. Không gian đẹp, dịch vụ chuyên nghiệp. Cảm ơn team!",
+      "fullFeedback": "The OM Lounge là điểm đến lý tưởng để thư giãn. Không gian đẹp, dịch vụ chuyên nghiệp. Cảm ơn team đã mang đến trải nghiệm tuyệt vời!"
+    }
+  ]
+}

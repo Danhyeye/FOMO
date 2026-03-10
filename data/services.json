@@ -1,0 +1,126 @@
+{
+  "services": {
+    "combo": {
+      "title": "Gói Combo",
+      "items": [
+        {
+          "name": "Luxury Mani & Pedi",
+          "description": "Combo chăm sóc móng tay và móng chân toàn diện với cắt da, tạo form và sơn gel cao cấp.",
+          "price": 520000,
+          "image": "/images/combo.png"
+        },
+        {
+          "name": "Relax Spa Combo",
+          "description": "Chăm sóc móng kết hợp massage thư giãn với tinh dầu thiên nhiên.",
+          "price": 480000,
+          "image": "/images/combo.png"
+        },
+        {
+          "name": "Premium Nail Care",
+          "description": "Combo dưỡng móng chuyên sâu, phục hồi móng yếu và sơn gel bền màu.",
+          "price": 550000,
+          "image": "/images/combo.png"
+        },
+        {
+          "name": "Quick Beauty Combo",
+          "description": "Combo làm đẹp nhanh cho móng tay và chân với lớp sơn bóng thời trang.",
+          "price": 420000,
+          "image": "/images/combo.png"
+        }
+      ]
+    },
+    "manicure": {
+      "title": "Manicure",
+      "items": [
+        {
+          "name": "Classic Manicure",
+          "description": "Chăm sóc móng tay cơ bản với cắt da, tạo form và sơn thường.",
+          "price": 180000,
+          "image": "/images/medicure.png"
+        },
+        {
+          "name": "Gel Manicure",
+          "description": "Sơn gel bền màu với lớp phủ bóng giúp móng luôn sáng đẹp.",
+          "price": 260000,
+          "image": "/images/medicure.png"
+        },
+        {
+          "name": "French Manicure",
+          "description": "Phong cách sơn móng French thanh lịch với đầu móng trắng tinh tế.",
+          "price": 240000,
+          "image": "/images/medicure.png"
+        },
+        {
+          "name": "Spa Manicure",
+          "description": "Chăm sóc móng tay kết hợp tẩy tế bào chết và massage tay thư giãn.",
+          "price": 320000,
+          "image": "/images/medicure.png"
+        },
+        {
+          "name": "Nail Strengthening",
+          "description": "Liệu trình tăng cường độ cứng cho móng yếu bằng dưỡng chất chuyên dụng.",
+          "price": 280000,
+          "image": "/images/medicure.png"
+        },
+        {
+          "name": "Luxury Gel Manicure",
+          "description": "Sơn gel cao cấp kết hợp dưỡng móng và massage tay nhẹ nhàng.",
+          "price": 350000,
+          "image": "/images/medicure.png"
+        }
+      ]
+    },
+    "pedicure": {
+      "title": "Pedicure",
+      "items": [
+        {
+          "name": "Classic Pedicure",
+          "description": "Chăm sóc móng chân cơ bản với làm sạch, cắt da và sơn thường.",
+          "price": 220000,
+          "image": "/images/pedicure.png"
+        },
+        {
+          "name": "Gel Pedicure",
+          "description": "Sơn gel cho móng chân với độ bền cao và màu sắc thời trang.",
+          "price": 300000,
+          "image": "/images/pedicure.png"
+        },
+        {
+          "name": "Spa Pedicure",
+          "description": "Chăm sóc móng chân kết hợp ngâm chân thảo mộc và massage thư giãn.",
+          "price": 360000,
+          "image": "/images/pedicure.png"
+        },
+        {
+          "name": "Callus Removal Pedicure",
+          "description": "Loại bỏ da chết và chai sần ở gót chân giúp da mềm mịn.",
+          "price": 340000,
+          "image": "/images/pedicure.png"
+        }
+      ]
+    },
+    "effects": {
+      "title": "Hiệu Ứng",
+      "items": [
+        {
+          "name": "Chrome Nail Effect",
+          "description": "Hiệu ứng chrome ánh kim mang lại vẻ sang trọng và nổi bật.",
+          "price": 120000,
+          "image": "/images/effects.png"
+        },
+        {
+          "name": "Cat Eye Effect",
+          "description": "Sơn gel hiệu ứng mắt mèo tạo chiều sâu và ánh sáng độc đáo.",
+          "price": 150000,
+          "image": "/images/effects.png"
+        },
+        {
+          "name": "Glitter Nail Art",
+          "description": "Trang trí móng với nhũ lấp lánh giúp móng nổi bật và cá tính.",
+          "price": 130000,
+          "image": "/images/effects.png"
+        }
+      ]
+    }
+  }
+}
