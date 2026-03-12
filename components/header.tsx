@@ -12,7 +12,7 @@ import { useCart } from "@/contexts/cart-context"
 import { Cart } from "@/components/cart"
 
 const navigationItems = [
-  { label: "Trang chủ", href: "/" },
+  { label: "Trang chủ", href: "#home" },
   { label: "Giới thiệu", href: "#about" },
   { label: "Dịch vụ", href: "#services" },
   { label: "Tin tức", href: "#news" },
@@ -101,7 +101,7 @@ export function Header() {
 
               <nav className="hidden lg:flex items-center gap-1">
                 {navigationItems.map((item) => {
-                  const isActive = pathname === item.href
+                  const isActive = pathname === item.href || (item.href === "#services")
                   return (
                     <Link
                       key={item.href}
@@ -167,7 +167,7 @@ export function Header() {
             <nav className="pb-4 border-t border-white/20 mt-4 pt-4">
               <div className="flex flex-col gap-1">
                 {navigationItems.map((item) => {
-                  const isActive = pathname === item.href
+                  const isActive = pathname === item.href || (item.href === "#services")
                   return (
                     <Link
                       key={item.href}
