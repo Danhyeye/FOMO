@@ -10,25 +10,42 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { useCart } from "@/contexts/cart-context"
 import { Cart } from "@/components/cart"
-
-const navigationItems = [
-  { label: "Trang chủ", href: "#home" },
-  { label: "Giới thiệu", href: "#about" },
-  { label: "Dịch vụ", href: "#services" },
-  { label: "Tin tức", href: "#news" },
-  { label: "Liên hệ", href: "#contact" },
-]
+import { useTranslation } from "react-i18next"
 
 export function Header() {
+  const { t, i18n } = useTranslation()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [languageOpen, setLanguageOpen] = useState(false)
   const [cartOpen, setCartOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
   const { itemCount } = useCart()
+
+  const navigationItems = [
+    { label: t("header.navigation.home"), href: "#home" },
+    { label: t("header.navigation.about"), href: "#about" },
+    { label: t("header.navigation.services"), href: "#services" },
+    { label: t("header.navigation.news"), href: "#news" },
+    { label: t("header.navigation.contact"), href: "#contact" },
+  ]
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     setMobileMenuOpen(false)
   }, [pathname])
+
+  const currentLanguage = mounted ? i18n.language : "vi"
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng)
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('i18nextLng', lng)
+    }
+    setLanguageOpen(false)
+  }
 
   return (
     <header className="relative w-full h-[50vh] overflow-hidden">
@@ -55,7 +72,7 @@ export function Header() {
                 onClick={() => setLanguageOpen(!languageOpen)}
                 className="flex items-center gap-2 text-white/90 hover:text-white text-sm font-medium transition-all duration-200 rounded-lg hover:bg-white/10 border border-white/20 hover:border-white/30 px-3 py-2 backdrop-blur-sm"
               >
-                ENGLISH
+                {currentLanguage === "en" ? t("header.language.english") : t("header.language.vietnamese")}
                 <ChevronDown
                   className={cn(
                     "w-4 h-4 transition-transform duration-200",
@@ -67,15 +84,23 @@ export function Header() {
                 <div className="absolute top-full left-0 mt-2 bg-black/95 backdrop-blur-md rounded-lg shadow-xl border border-white/10 min-w-[120px] overflow-hidden z-50">
                   <Button
                     variant="ghost"
-                    className="w-full justify-start px-4 py-2 text-white hover:bg-white/10 text-sm transition-colors h-auto"
+                    onClick={() => changeLanguage("en")}
+                    className={cn(
+                      "w-full justify-start px-4 py-2 text-sm transition-colors h-auto",
+                      currentLanguage === "en" ? "text-white bg-white/10" : "text-white/70 hover:bg-white/10 hover:text-white"
+                    )}
                   >
-                    ENGLISH
+                    {t("header.language.english")}
                   </Button>
                   <Button
                     variant="ghost"
-                    className="w-full justify-start px-4 py-2 text-white/70 hover:bg-white/10 hover:text-white text-sm transition-colors h-auto"
+                    onClick={() => changeLanguage("vi")}
+                    className={cn(
+                      "w-full justify-start px-4 py-2 text-sm transition-colors h-auto",
+                      currentLanguage === "vi" ? "text-white bg-white/10" : "text-white/70 hover:bg-white/10 hover:text-white"
+                    )}
                   >
-                    VIETNAMESE
+                    {t("header.language.vietnamese")}
                   </Button>
                 </div>
               )}
@@ -143,12 +168,12 @@ export function Header() {
                 <ShoppingCart className="w-5 h-5 lg:w-6 lg:h-6 transition-transform group-hover:scale-110" />
                 <div className="flex items-center gap-4">
                   <span className="text-sm font-medium hidden sm:inline text-white">
-                    GIỎ HÀNG
+                    {t("header.cart")}
                   </span>
                   {itemCount > 0 && (
                     <Badge
                       variant="default"
-                      className="bg-white hover:bg-[#47301F]/90 text-[#47301F] border-0 text-xs min-w-[20px] h-6 flex items-center justify-center shadow-lg transition-transform group-hover:scale-110"
+                      className="bg-white text-[#47301F] border-0 text-xs min-w-[20px] h-6 flex items-center justify-center shadow-lg transition-transform group-hover:scale-110"
                     >
                       {itemCount}
                     </Badge>
@@ -190,7 +215,7 @@ export function Header() {
 
       <div className="absolute bottom-0 left-0 right-0 z-10 flex flex-col items-center justify-end pb-12 md:pb-16 lg:pb-20 px-4">
         <h1 className="text-6xl md:text-7xl font-bold text-white mb-4 drop-shadow-2xl text-center" style={{ fontFamily: 'var(--font-mt-dalat-sans)' }}>
-          Dịch Vụ
+          {t("header.title")}
         </h1>
       </div>
       

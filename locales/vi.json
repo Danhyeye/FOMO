@@ -1,0 +1,86 @@
+  {
+  "header": {
+    "navigation": {
+      "home": "Trang chủ",
+      "about": "Giới thiệu",
+      "services": "Dịch vụ",
+      "news": "Tin tức",
+      "contact": "Liên hệ"
+    },
+    "cart": "GIỎ HÀNG",
+    "title": "Dịch Vụ",
+    "language": {
+      "english": "ENGLISH",
+      "vietnamese": "VIETNAMESE"
+    }
+  },
+  "serviceFilters": {
+    "categories": {
+      "combo": "GÓI COMBO",
+      "medicure": "MEDICURE",
+      "pedicure": "PEDICURE",
+      "effects": "HIỆU ỨNG"
+    },
+    "searchPlaceholder": "Tìm kiếm"
+  },
+  "serviceListings": {
+    "noResults": "Không tìm thấy dịch vụ phù hợp",
+    "duration": "10 phút"
+  },
+  "cart": {
+    "title": "Giỏ Hàng",
+    "empty": "Giỏ hàng trống",
+    "technician": "Kỹ thuật viên",
+    "total": "Tổng thanh toán",
+    "continue": "Tiếp Tục",
+    "remove": "Xóa"
+  },
+  "booking": {
+    "title": "Xác Nhận Đặt Lịch",
+    "customerName": "Tên khách hàng",
+    "phoneNumber": "Số điện thoại",
+    "phoneError": "Vui lòng nhập số điện thoại hợp lệ (ví dụ: 0912345678 hoặc +84912345678)",
+    "selectDate": "Chọn ngày",
+    "selectTime": "Chọn khung giờ",
+    "backToCart": "Quay lại giỏ hàng",
+    "book": "Đặt Lịch",
+    "days": {
+      "sunday": "Chủ Nhật",
+      "monday": "Thứ 2",
+      "tuesday": "Thứ 3",
+      "wednesday": "Thứ 4",
+      "thursday": "Thứ 5",
+      "friday": "Thứ 6",
+      "saturday": "Thứ 7"
+    }
+  },
+  "success": {
+    "title": "Gửi Yêu Cầu Thành Công!",
+    "message": "Cảm ơn bạn đã đặt dịch vụ tại The OM Lounge. Chúng tôi đã nhận được thông tin đặt lịch từ bạn và sẽ liên hệ lại trong thời gian sớm nhất."
+  },
+  "customerFeedback": {
+    "subtitle": "NHẬN XÉT TỪ",
+    "title": "Khách Hàng",
+    "readMore": "Xem thêm",
+    "readLess": "Thu gọn"
+  },
+  "footer": {
+    "navigation": {
+      "home": "Trang chủ",
+      "about": "Giới thiệu",
+      "services": "Dịch vụ"
+    },
+    "sitemap": "SITEMAP",
+    "contact": "LIÊN HỆ",
+    "hours": {
+      "weekday": "Thứ 2 - Thứ 6: 09:00 - 19:00",
+      "weekend": "Thứ 7 - Chủ nhật: 09:00 - 20:00"
+    },
+    "links": {
+      "news": "Tin tức",
+      "contact": "Liên hệ"
+    },
+    "bookNow": "Đặt lịch ngay",
+    "copyright": "© 2026—Copyright The OM Lounge. All rights reserved."
+  }
+}

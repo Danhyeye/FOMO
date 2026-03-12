@@ -4,13 +4,7 @@ import { Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-
-const categories = [
-  { id: "combo", label: "GÓI COMBO" },
-  { id: "medicure", label: "MEDICURE" },
-  { id: "pedicure", label: "PEDICURE" },
-  { id: "effects", label: "HIỆU ỨNG" },
-]
+import { useTranslation } from "react-i18next"
 
 interface ServiceFiltersProps {
   activeCategory: string
@@ -25,6 +19,14 @@ export function ServiceFilters({
   searchQuery, 
   setSearchQuery 
 }: ServiceFiltersProps) {
+  const { t } = useTranslation()
+
+  const categories = [
+    { id: "combo", label: t("serviceFilters.categories.combo") },
+    { id: "medicure", label: t("serviceFilters.categories.medicure") },
+    { id: "pedicure", label: t("serviceFilters.categories.pedicure") },
+    { id: "effects", label: t("serviceFilters.categories.effects") },
+  ]
   const handleCategoryClick = (categoryId: string) => {
     setActiveCategory(categoryId)
     setTimeout(() => {
@@ -72,7 +74,7 @@ export function ServiceFilters({
       <div className="relative w-full md:w-auto">
         <Input
           type="text"
-          placeholder="Tìm kiếm"
+          placeholder={t("serviceFilters.searchPlaceholder")}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="text-white placeholder:text-white/60 w-full md:w-64 pr-10 bg-transparent border-0 border-b border-white rounded-none focus:border-amber-300 focus:ring-0" 

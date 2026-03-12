@@ -4,28 +4,30 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-
-const navigationItems = [
-  { label: "Trang chủ", href: "/" },
-  { label: "Giới thiệu", href: "/about" },
-  { label: "Dịch vụ", href: "/services" },
-]
-
-const contactInfo = {
-  phone: "+84 89 812 1297",
-  address: "6 Đường 9, Phú Mỹ, Quận 7, TP Hồ Chí Minh (gần Crescent Mall)",
-  hours: {
-    weekday: "Thứ 2 - Thứ 6: 09:00 - 19:00",
-    weekend: "Thứ 7 - Chủ nhật: 09:00 - 20:00",
-  },
-}
-
-const additionalLinks = [
-  { label: "Tin tức", href: "/news" },
-  { label: "Liên hệ", href: "/contact" },
-]
+import { useTranslation } from "react-i18next"
 
 export function Footer() {
+  const { t } = useTranslation()
+
+  const navigationItems = [
+    { label: t("footer.navigation.home"), href: "/" },
+    { label: t("footer.navigation.about"), href: "/about" },
+    { label: t("footer.navigation.services"), href: "/services" },
+  ]
+
+  const contactInfo = {
+    phone: "+84 89 812 1297",
+    address: "6 Đường 9, Phú Mỹ, Quận 7, TP Hồ Chí Minh (gần Crescent Mall)",
+    hours: {
+      weekday: t("footer.hours.weekday"),
+      weekend: t("footer.hours.weekend"),
+    },
+  }
+
+  const additionalLinks = [
+    { label: t("footer.links.news"), href: "/news" },
+    { label: t("footer.links.contact"), href: "/contact" },
+  ]
   return (
     <footer className="relative bg-[#2a1e0a] text-[#E0D6B7] overflow-hidden">
       <div className="absolute top-0 right-0 w-64 h-64 opacity-20 pointer-events-none">
@@ -71,7 +73,7 @@ export function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-[#E0D6B7]" />
               <h5 className="text-[#E0D6B7] text-xs font-medium uppercase tracking-wider">
-                SITEMAP
+                {t("footer.sitemap")}
               </h5>
             </div>
             <nav className="flex flex-col gap-3">
@@ -91,7 +93,7 @@ export function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-[#E0D6B7]" />
               <h5 className="text-[#E0D6B7] text-xs font-medium uppercase tracking-wider">
-                LIÊN HỆ
+                {t("footer.contact")}
               </h5>
             </div>
             <div className="flex flex-col gap-3 text-sm text-[#E0D6B7]">
@@ -124,7 +126,7 @@ export function Footer() {
 
             <Image
               src="/images/btn.png"
-              alt="Đặt lịch ngay"
+              alt={t("footer.bookNow")}
               width={200}
               height={60}
               className="w-full md:w-auto cursor-pointer hover:opacity-80 transition-opacity"
@@ -181,7 +183,7 @@ export function Footer() {
               </a>
             </div>
           <p className="text-[#E0D6B7]/60 text-xs text-right">
-            © 2026—Copyright The OM Lounge. All rights reserved.
+            {t("footer.copyright")}
           </p>
         </div>
       </div>

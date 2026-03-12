@@ -11,8 +11,10 @@ import {
   CustomCarouselItem,
   type CarouselApi,
 } from "@/components/custom-carousel"
+import { useTranslation } from "react-i18next"
 
 export function CustomerFeedback() {
+  const { t: translate } = useTranslation()
   const testimonials = testimonialsData.testimonials
   const [api, setApi] = useState<CarouselApi>()
   const [expandedIds, setExpandedIds] = useState<Set<number>>(new Set())
@@ -40,10 +42,10 @@ export function CustomerFeedback() {
 
       <div className="text-center mb-12 relative z-10">
         <p className="text-white/75 text-[13px] tracking-[3px] uppercase mb-2 font-sans font-medium">
-          NHẬN XÉT TỪ
+          {translate("customerFeedback.subtitle")}
         </p>
         <h2 className="text-white m-0 text-[clamp(2.5rem,5vw,4rem)] font-(-font-mt-dalat-sans,'Playfair_Display',Georgia,serif)]">
-          Khách Hàng
+          {translate("customerFeedback.title")}
         </h2>
       </div>
 
@@ -125,7 +127,7 @@ export function CustomerFeedback() {
                                 />
                               </div>
                               <span
-                                className={`text-white font-bold font-[var(--font-mt-dalat-sans,'Playfair_Display',Georgia,serif)] ${
+                                className={`text-white font-bold font-(--font-mt-dalat-sans,'Playfair_Display',Georgia,serif) ${
                                   isCenter ? "text-lg" : "text-base"
                                 }`}
                               >
@@ -151,7 +153,7 @@ export function CustomerFeedback() {
                                 onClick={() => toggleExpanded(t.id)}
                                 className="p-0 h-auto text-sm text-white/80 hover:text-white underline underline-offset-[3px] font-sans font-normal transition-colors"
                               >
-                                {expandedIds.has(t.id) ? "Thu gọn" : "Xem thêm"}
+                                {expandedIds.has(t.id) ? translate("customerFeedback.readLess") : translate("customerFeedback.readMore")}
                               </Button>
                             )}
                           </CardContent>

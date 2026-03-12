@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/dialog"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
+import { useTranslation } from "react-i18next"
 
 export function SuccessDialog({
   open,
@@ -16,11 +17,12 @@ export function SuccessDialog({
   open: boolean
   onOpenChange: (open: boolean) => void
 }) {
+  const { t } = useTranslation()
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[450px] bg-[#F5F0E8] p-8 border-0">
         <DialogTitle className="sr-only">
-          Gửi Yêu Cầu Thành Công!
+          {t("success.title")}
         </DialogTitle>
         <div className="flex flex-col items-center text-center">
           <div className="relative w-full h-32">
@@ -33,12 +35,11 @@ export function SuccessDialog({
           </div>
           <div className="flex flex-col items-center text-center space-y-2">
           <h2 className="text-xl font-bold font-['var(--font-mt-dalat-sans)'] text-[#47301F]">
-            Gửi Yêu Cầu Thành Công!
+            {t("success.title")}
           </h2>
 
           <p className="text-sm text-[#47301F]/80 leading-relaxed max-w-sm">
-            Cảm ơn bạn đã đặt dịch vụ tại The OM Lounge. Chúng tôi đã nhận được
-            thông tin đặt lịch từ bạn và sẽ liên hệ lại trong thời gian sớm nhất.
+            {t("success.message")}
           </p>
           </div>
         </div>

@@ -14,6 +14,7 @@ import { useCart } from "@/contexts/cart-context"
 import { cn } from "@/lib/utils"
 import { SuccessDialog } from "@/components/success-dialog"
 import { validatePhoneNumber } from "@/utils/validation/validatePhone"
+import { useTranslation } from "react-i18next"
 
 const timeSlots = [
   "09:00 AM",
@@ -38,44 +39,6 @@ const timeSlots = [
   "06:30 PM",
 ]
 
-const getVietnameseDayName = (dayIndex: number): string => {
-  const days = [
-    "Chủ Nhật",
-    "Thứ 2",
-    "Thứ 3",
-    "Thứ 4",
-    "Thứ 5",
-    "Thứ 6",
-    "Thứ 7",
-  ]
-  return days[dayIndex]
-}
-
-const generateDates = () => {
-  const dates = []
-  const today = new Date()
-  
-  for (let i = 0; i < 6; i++) {
-    const date = new Date(today)
-    date.setDate(today.getDate() + i)
-    
-    const dayName = getVietnameseDayName(date.getDay())
-    const day = String(date.getDate()).padStart(2, "0")
-    const month = String(date.getMonth() + 1).padStart(2, "0")
-    const dateStr = `${day}/${month}`
-    const value = date.toISOString().split("T")[0]
-    
-    dates.push({
-      label: dayName,
-      date: dateStr,
-      day: date.toLocaleDateString("en-US", { weekday: "long" }),
-      value: value,
-    })
-  }
-  
-  return dates
-}
-
 export function BookingDialog({
   open,
   onOpenChange,
@@ -85,9 +48,41 @@ export function BookingDialog({
   onOpenChange: (open: boolean) => void
   onBackToCart?: () => void
 }) {
+  const { t } = useTranslation()
   const { clearCart } = useCart()
   const [customerName, setCustomerName] = useState("")
   const [phoneNumber, setPhoneNumber] = useState("")
+  
+  const getDayName = (dayIndex: number): string => {
+    const dayKeys = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
+    return t(`booking.days.${dayKeys[dayIndex]}`)
+  }
+
+  const generateDates = () => {
+    const dates = []
+    const today = new Date()
+    
+    for (let i = 0; i < 6; i++) {
+      const date = new Date(today)
+      date.setDate(today.getDate() + i)
+      
+      const dayName = getDayName(date.getDay())
+      const day = String(date.getDate()).padStart(2, "0")
+      const month = String(date.getMonth() + 1).padStart(2, "0")
+      const dateStr = `${day}/${month}`
+      const value = date.toISOString().split("T")[0]
+      
+      dates.push({
+        label: dayName,
+        date: dateStr,
+        day: date.toLocaleDateString("en-US", { weekday: "long" }),
+        value: value,
+      })
+    }
+    
+    return dates
+  }
+
   const dates = generateDates()
   const [selectedDate, setSelectedDate] = useState(dates[0].value)
   const [selectedTime, setSelectedTime] = useState("10:00 AM")
@@ -120,13 +115,13 @@ export function BookingDialog({
               className="text-center text-2xl font-bold text-[#47301F] mb-6"
               style={{ fontFamily: "var(--font-mt-dalat-sans)" }}
             >
-              Xác Nhận Đặt Lịch
+              {t("booking.title")}
             </SheetTitle>
           </SheetHeader>
 
           <div className="space-y-6 mt-6">
             <div className="space-y-2">
-              <label className="text-sm text-[#47301F]/70">Tên khách hàng</label>
+              <label className="text-sm text-[#47301F]/70">{t("booking.customerName")}</label>
               <Input
                 value={customerName}
                 onChange={(e) => setCustomerName(e.target.value)}
@@ -135,7 +130,7 @@ export function BookingDialog({
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm text-[#47301F]/70">Số điện thoại</label>
+              <label className="text-sm text-[#47301F]/70">{t("booking.phoneNumber")}</label>
               <Input
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
@@ -146,13 +141,13 @@ export function BookingDialog({
               />
               {phoneNumber.trim() !== "" && !validatePhoneNumber(phoneNumber) && (
                 <p className="text-red-500 text-xs">
-                  Vui lòng nhập số điện thoại hợp lệ (ví dụ: 0912345678 hoặc +84912345678)
+                  {t("booking.phoneError")}
                 </p>
               )}
             </div>
 
             <div className="space-y-3">
-              <label className="text-sm text-[#47301F]/70">Chọn ngày</label>
+              <label className="text-sm text-[#47301F]/70">{t("booking.selectDate")}</label>
               <div className="flex gap-2 flex-wrap">
                 {dates.map((date) => (
                   <Button
@@ -183,7 +178,7 @@ export function BookingDialog({
             </div>
 
             <div className="space-y-3">
-              <label className="text-sm text-[#47301F]/70">Chọn khung giờ</label>
+              <label className="text-sm text-[#47301F]/70">{t("booking.selectTime")}</label>
               <div className="grid grid-cols-4 gap-2">
                 {timeSlots.map((time) => (
                   <Button
@@ -215,7 +210,7 @@ export function BookingDialog({
                 )}
               >
                 <ArrowLeft className="w-5 h-5" />
-                <span>Quay lại giỏ hàng</span>
+                <span>{t("booking.backToCart")}</span>
               </Button>
             )}
 
@@ -227,7 +222,7 @@ export function BookingDialog({
                 !isFormValid && "opacity-50 cursor-not-allowed hover:bg-[#47301F]"
               )}
             >
-              <span>Đặt Lịch</span>
+              <span>{t("booking.book")}</span>
               <ChevronRight className="w-5 h-5" />
             </Button>
           </div>

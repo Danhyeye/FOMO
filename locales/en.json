@@ -1,0 +1,86 @@
+{
+  "header": {
+    "navigation": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "news": "News",
+      "contact": "Contact"
+    },
+    "cart": "CART",
+    "title": "Services",
+    "language": {
+      "english": "ENGLISH",
+      "vietnamese": "VIETNAMESE"
+    }
+  },
+  "serviceFilters": {
+    "categories": {
+      "combo": "COMBO PACKAGE",
+      "medicure": "MEDICURE",
+      "pedicure": "PEDICURE",
+      "effects": "EFFECTS"
+    },
+    "searchPlaceholder": "Search"
+  },
+  "serviceListings": {
+    "noResults": "No matching services found",
+    "duration": "10 minutes"
+  },
+  "cart": {
+    "title": "Cart",
+    "empty": "Cart is empty",
+    "technician": "Technician",
+    "total": "Total",
+    "continue": "Continue",
+    "remove": "Remove"
+  },
+  "booking": {
+    "title": "Confirm Booking",
+    "customerName": "Customer Name",
+    "phoneNumber": "Phone Number",
+    "phoneError": "Please enter a valid phone number (e.g., 0912345678 or +84912345678)",
+    "selectDate": "Select Date",
+    "selectTime": "Select Time Slot",
+    "backToCart": "Back to Cart",
+    "book": "Book Now",
+    "days": {
+      "sunday": "Sunday",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday"
+    }
+  },
+  "success": {
+    "title": "Request Sent Successfully!",
+    "message": "Thank you for booking a service at The OM Lounge. We have received your booking information and will contact you as soon as possible."
+  },
+  "customerFeedback": {
+    "subtitle": "FEEDBACK FROM",
+    "title": "Customers",
+    "readMore": "Read more",
+    "readLess": "Read less"
+  },
+  "footer": {
+    "navigation": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services"
+    },
+    "sitemap": "SITEMAP",
+    "contact": "CONTACT",
+    "hours": {
+      "weekday": "Mon - Fri: 09:00 - 19:00",
+      "weekend": "Sat - Sun: 09:00 - 20:00"
+    },
+    "links": {
+      "news": "News",
+      "contact": "Contact"
+    },
+    "bookNow": "Book Now",
+    "copyright": "© 2026—Copyright The OM Lounge. All rights reserved."
+  }
+}

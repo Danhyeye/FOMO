@@ -16,6 +16,7 @@ import { useCart } from "@/contexts/cart-context"
 import { cn } from "@/lib/utils"
 import { BookingDialog } from "@/components/booking-dialog"
 import { formatPrice, formatPriceVN } from "@/utils/numbers/formatPrice"
+import { useTranslation } from "react-i18next"
 
 const technicians = [
   {
@@ -32,6 +33,7 @@ interface CartProps {
 }
 
 export function Cart({ open: controlledOpen, onOpenChange, trigger }: CartProps) {
+  const { t } = useTranslation()
   const { items, removeItem, updateQuantity, updateEffectQuantity, total } =
     useCart()
   const [internalOpen, setInternalOpen] = useState(false)
@@ -61,14 +63,14 @@ export function Cart({ open: controlledOpen, onOpenChange, trigger }: CartProps)
               className="text-center text-2xl font-bold text-[#47301F]"
               style={{ fontFamily: "var(--font-mt-dalat-sans)" }}
             >
-              Giỏ Hàng
+              {t("cart.title")}
             </SheetTitle>
           </SheetHeader>
 
           <div className="flex-1 px-6 py-4 space-y-4 overflow-y-auto">
             {items.length === 0 ? (
               <div className="flex flex-col items-center justify-center py-12 text-center">
-                <p className="text-black text-base">Giỏ hàng trống</p>
+                <p className="text-black text-base">{t("cart.empty")}</p>
               </div>
             ) : (
               items.map((item) => (
@@ -133,7 +135,7 @@ export function Cart({ open: controlledOpen, onOpenChange, trigger }: CartProps)
                           </div>
                           <div className="flex-1 min-w-0">
                             <p className="text-xs text-black">
-                              Hiệu ứng: {effect.name}
+                              {effect.name}
                             </p>
                           </div>
                           <div className="flex items-center gap-1 border border-[#D6D0C5] rounded-full">
@@ -177,7 +179,7 @@ export function Cart({ open: controlledOpen, onOpenChange, trigger }: CartProps)
           {items.length > 0 && (
             <div className="border-t border-[#D6D0C5]/30 px-6 py-4 space-y-4 bg-white">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-[#47301F]/70">Kỹ thuật viên</span>
+                <span className="text-sm text-[#47301F]/70">{t("cart.technician")}</span>
                 <div className="flex items-center gap-2">
                   <div className="relative w-8 h-8 rounded-full overflow-hidden bg-[#D6D0C5]/20">
                     {technicians[0].avatar ? (
@@ -201,7 +203,7 @@ export function Cart({ open: controlledOpen, onOpenChange, trigger }: CartProps)
               </div>
 
               <div className="flex items-center justify-between">
-                <span className="text-sm text-[#47301F]/70">Tổng thanh toán</span>
+                <span className="text-sm text-[#47301F]/70">{t("cart.total")}</span>
                 <span className="text-lg font-bold text-red-600">
                   {formatPriceVN(total)}
                 </span>
@@ -213,7 +215,7 @@ export function Cart({ open: controlledOpen, onOpenChange, trigger }: CartProps)
                   "w-full bg-[#47301F] hover:bg-[#47301F]/90 text-white rounded-none py-6 text-base font-medium flex items-center justify-between"
                 )}
               >
-                <span>Tiếp Tục</span>
+                <span>{t("cart.continue")}</span>
                 <ChevronRight className="w-5 h-5" />
               </Button>
             </div>

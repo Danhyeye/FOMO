@@ -8,6 +8,7 @@ import { Separator } from "./ui/separator"
 import servicesData from "@/data/services.json"
 import drinksData from "@/data/drinks.json"
 import { useCart } from "@/contexts/cart-context"
+import { useTranslation } from "react-i18next"
 
 interface ServiceListingsProps {
   searchQuery: string
@@ -25,6 +26,7 @@ function ServiceSection({
   imagePosition?: "left" | "right"
 }) {
   const { addItem } = useCart()
+  const { t } = useTranslation()
   let filteredItems = categoryData.items
   if (searchQuery.trim()) {
     filteredItems = categoryData.items.filter((item) =>
@@ -62,7 +64,7 @@ function ServiceSection({
 
         {filteredItems.length === 0 ? (
           <div className="text-white/70 text-center py-8">
-            <p>Không tìm thấy dịch vụ phù hợp</p>
+            <p>{t("serviceListings.noResults")}</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-4">
@@ -93,7 +95,7 @@ function ServiceSection({
                       onClick={() => addItem({
                         name: service.name,
                         price: service.price,
-                        duration: "10 phút",
+                        duration: t("serviceListings.duration"),
                       })}
                       className="shrink-0 rounded-full hover:bg-white/20 text-white border-0 h-10 w-10 transition-all duration-200 group-hover:scale-110"
                       aria-label={`Add ${service.name} to cart`}
